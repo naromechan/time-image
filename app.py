@@ -13,9 +13,9 @@ def generate_image():
     draw = ImageDraw.Draw(img)
 
     # ✅ 시스템 Arial 폰트 직접 지정
-    font = ImageFont.truetype("font.ttf", 30)
+    font = ImageFont.truetype("font.ttf", 35)
 
-    x, y = 200, 870
+    x, y = 200, 860
 
     draw.text((x, y), f"{now}라니……", font=font, fill=(255,0,0))
 
