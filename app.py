@@ -12,16 +12,11 @@ def generate_image():
     img = Image.open("base.png").convert("RGB")
     draw = ImageDraw.Draw(img)
 
-    # ✅ 폰트 크게
-    try:
-        font = ImageFont.truetype("arial.ttf", 130)
-    except:
-        font = ImageFont.load_default()
+    # ✅ 시스템 Arial 폰트 직접 지정
+    font = ImageFont.truetype("C:/Windows/Fonts/arial.ttf", 110)
 
-    # ✅ 좌표 (이건 조금만 수정하면 됨)
-    x, y = 100, 500
+    x, y = 300, 750
 
-    # ✅ 빨간색 유지 (위치 확인용)
     draw.text((x, y), f"{now}라니……", font=font, fill=(255,0,0))
 
     buf = io.BytesIO()
@@ -31,4 +26,3 @@ def generate_image():
     return send_file(buf, mimetype="image/png")
 
 app.run(host="0.0.0.0", port=5000)
-
