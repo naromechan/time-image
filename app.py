@@ -18,7 +18,7 @@ def generate_image():
 
     x, y = 200, 860
 
-    draw.text((x, y), f"{now}라니……", font=font, fill=(210,205,190))
+    draw.text((x, y), f"{now}라니……", font=font, fill=(220,215,200))
 
     buf = io.BytesIO()
     img.save(buf, format="PNG")
