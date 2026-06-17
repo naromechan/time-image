@@ -6,6 +6,7 @@ import io
 
 app = Flask(__name__)
 
+# ✅ 웹페이지
 @app.route("/")
 def home():
     return """
@@ -15,15 +16,15 @@ def home():
         </body>
     </html>
     """
-    
-@app.route("/")
+
+# ✅ 이미지 생성
+@app.route("/image")
 def generate_image():
     now = datetime.now(ZoneInfo("Asia/Seoul")).strftime("%H시 %M분")
 
     img = Image.open("base.png").convert("RGB")
     draw = ImageDraw.Draw(img)
 
-    # ✅ 시스템 Arial 폰트 직접 지정
     font = ImageFont.truetype("font.ttf", 37)
 
     x, y = 200, 860
