@@ -13,7 +13,7 @@ def generate_image():
     draw = ImageDraw.Draw(img)
 
     # ✅ 시스템 Arial 폰트 직접 지정
-    font = ImageFont.truetype("font.ttf", 50)
+    font = ImageFont.truetype("font.ttf", 45)
 
     x, y = 200, 850
 
