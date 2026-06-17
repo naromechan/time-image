@@ -14,7 +14,7 @@ def generate_image():
 
     # ✅ 폰트 크게
     try:
-        font = ImageFont.truetype("arial.ttf", 80)
+        font = ImageFont.truetype("arial.ttf", 130)
     except:
         font = ImageFont.load_default()
 
