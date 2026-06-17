@@ -7,6 +7,16 @@ import io
 app = Flask(__name__)
 
 @app.route("/")
+def home():
+    return """
+    <html>
+        <body style="margin:0; background:black; display:flex; justify-content:center; align-items:center; height:100vh;">
+            <img src="/image" style="max-width:100%;">
+        </body>
+    </html>
+    """
+    
+@app.route("/")
 def generate_image():
     now = datetime.now(ZoneInfo("Asia/Seoul")).strftime("%H시 %M분")
 
