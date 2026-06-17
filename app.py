@@ -1,13 +1,14 @@
 from flask import Flask, send_file
 from PIL import Image, ImageDraw, ImageFont
 from datetime import datetime
+from zoneinfo import ZoneInfo
 import io
 
 app = Flask(__name__)
 
 @app.route("/")
 def generate_image():
-    now = datetime.now().strftime("%H시")
+    now = datetime.now(ZoneInfo("Asia/Seoul")).strftime("%H시 %M분")
 
     img = Image.open("base.png").convert("RGB")
     draw = ImageDraw.Draw(img)
